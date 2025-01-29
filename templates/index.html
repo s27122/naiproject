@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+</head>
+<body>
+    <h1>Input user ID to get recommendations</h1>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required>
+        <button type="submit">Get recommendations</button>
+    </form>
+
+    {% if user_id %}
+        <h2>Recommendations for user {{ user_id }}:</h2>
+        <h3>collaborative_filtering:</h3>
+        <ul>
+            {% for item in recommendations['collaborative'] %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>content_based_filtering</h3>
+        <ul>
+            {% for item in recommendations['content_based'] %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>popularity_based_filtering:</h3>
+        <ul>
+            {% for item in recommendations['popularity_based'] %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
