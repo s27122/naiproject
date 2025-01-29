@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
-client = MongoClient('mongodb+srv://admin:admin@cluster0.yewm5.mongodb.net/')
-db = client['naiproject']
+client = MongoClient('******************')
+db = client['**********']
 # Fetch users
 users = list(db.users.find())
 print("Users:", users)

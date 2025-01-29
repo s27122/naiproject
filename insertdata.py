@@ -1,8 +1,8 @@
 from pymongo import MongoClient
 
 # Connect to MongoDB
-client = MongoClient('mongodb+srv://admin:admin@cluster0.yewm5.mongodb.net/')
-db = client['naiproject']
+client = MongoClient('***********')
+db = client['***********']
 
 # Insert users
 # users = [

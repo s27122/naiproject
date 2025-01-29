@@ -5,8 +5,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 from collections import defaultdict
 
-client = MongoClient('mongodb+srv://admin:admin@cluster0.yewm5.mongodb.net/')
-db = client['naiproject']
+client = MongoClient('*********')
+db = client['*******']
 
 def get_data():
     interactions = list(db.user_product_interactions.find())
